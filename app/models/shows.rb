@@ -1,3 +1,0 @@
-class Show < ApplicaitonRecord
-  
-end

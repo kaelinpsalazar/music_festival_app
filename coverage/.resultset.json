@@ -1,0 +1,109 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/app/models/schedule_show.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/spec/models/schedule_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null
+        ]
+      },
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/app/models/schedule.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/spec/models/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          null
+        ]
+      },
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/app/models/show.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/spec/requests/api/v1/schedules_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/spec/requests/api/v1/shows_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kaelinsalazar/turing_projects/3-mod/music_festival_app/spec/requests/api/v1/users_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1737484042
+  }
+}
