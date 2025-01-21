@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :schedules, only: [:index]
-      
+      resources :users, only: [:show] do
+        resources :schedules, only: [:show]
+      end
     end
   end
 

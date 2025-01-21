@@ -256,3 +256,198 @@ Processing by Api::V1::SchedulesController#index as */*
 Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 802)
 
 
+Started GET "/api/v1/users/1/schedules/1" for ::1 at 2025-01-21 12:56:12 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Processing by Api::V1::SchedulesController#show as */*
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms | Allocations: 2521)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/v1/schedules_controller.rb:8:in `show'
+Started GET "/schedules" for ::1 at 2025-01-21 12:57:54 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/schedules"):
+  
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Started GET "/api/v1/schedules" for ::1 at 2025-01-21 12:58:02 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (2.3ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:4:in `index'
+Completed 200 OK in 151ms (Views: 22.7ms | ActiveRecord: 113.5ms | Allocations: 11880)
+
+
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 12:59:01 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Processing by Api::V1::SchedulesController#show as */*
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 106)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/v1/schedules_controller.rb:8:in `show'
+Started GET "/api/v1/schedues" for ::1 at 2025-01-21 12:59:26 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/schedues"):
+  
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Started GET "/api/v1/schedues" for ::1 at 2025-01-21 12:59:29 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/schedues"):
+  
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Started GET "/api/v1/schedules" for ::1 at 2025-01-21 12:59:33 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (84.4ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:4:in `index'
+Completed 200 OK in 100ms (Views: 11.0ms | ActiveRecord: 83.5ms | Allocations: 804)
+
+
+Started GET "/api/v1/schedules/1/users/8" for ::1 at 2025-01-21 13:03:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (14.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/schedules/1/users/8"):
+  
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 13:04:35 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Processing by Api::V1::SchedulesController#show as */*
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms | Allocations: 2513)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/v1/schedules_controller.rb:8:in `show'
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 13:04:37 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Processing by Api::V1::SchedulesController#show as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 109)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/v1/schedules_controller.rb:8:in `show'
+Started GET "/api/v1/users/:user_id/schedules/:id" for ::1 at 2025-01-21 13:15:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Processing by Api::V1::SchedulesController#show as */*
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 2521)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/v1/schedules_controller.rb:8:in `show'
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 13:16:54 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+plant_params = {
+                name: "Carrot",
+                img_url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carrot.jpg",
+                description: "A root vegetable that grows well in loamy soil."
+            }
+Processing by Api::V1::SchedulesController#show as */*
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 109)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/v1/schedules_controller.rb:8:in `show'
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 13:18:12 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"8", "id"=>"1"}
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (0.8ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (3.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:11:in `show'
+Completed 200 OK in 172ms (Views: 8.1ms | ActiveRecord: 53.7ms | Allocations: 28580)
+
+

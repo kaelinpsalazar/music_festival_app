@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-21T12:22:26-07:00">2025-01-21T12:22:26-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-21T13:06:24-07:00">2025-01-21T13:06:24-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -29,7 +29,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.14
+         1.16
        </span>
     </span> hits/line
     )
@@ -42,8 +42,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>50</b> relevant lines,
-    <span class="green"><b>50</b> lines covered</span> and
+    <b>70</b> relevant lines,
+    <span class="green"><b>70</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -72,9 +72,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#15087d4162c9c141dd0909322c5fb87752f781ba" class="src_link" title="app/controllers/api/v1/schedules_controller.rb">app/controllers/api/v1/schedules_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">4</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">8</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -182,11 +182,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#d6018e599974e48243dfcc797305ff183e1d876f" class="src_link" title="spec/requests/api/v1/schedules_spec.rb">spec/requests/api/v1/schedules_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">11</td>
+            <td class="cell--number">42</td>
+            <td class="cell--number">27</td>
+            <td class="cell--number">27</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.09</td>
+            <td class="cell--number">1.19</td>
             
           </tr>
         
@@ -243,8 +243,8 @@
     
 
     <div class="t-line-summary">
-      <b>4</b> relevant lines.
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>8</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -315,6 +315,124 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def show</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    user = User.find(params[:user_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    schedule = user.schedules.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    render json: {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+
+            
+
+            <code class="ruby">      schedule: schedule,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+
+            
+
+            <code class="ruby">      shows: schedule.shows,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+
+            
+
+            <code class="ruby">      user: schedule.user</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+
+            
+
+            <code class="ruby">    }, status: :ok</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
             
 
             
@@ -1065,8 +1183,8 @@
     
 
     <div class="t-line-summary">
-      <b>11</b> relevant lines.
-      <span class="green"><b>11</b> lines covered</span> and
+      <b>27</b> relevant lines.
+      <span class="green"><b>27</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1260,12 +1378,294 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="covered" data-hits="1" data-linenumber="17">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &quot;GET /api/v1/schedules/:user_id/:id&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="18">
+            
+              <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    let!(:user) { create(:user) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="19">
+            
+              <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    let!(:schedule) { create(:schedule, user: user) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="20">
+            
+              <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    let!(:show) { create(:show) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="21">
+            
+              <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    let!(:schedule_show) { create(:schedule_show, schedule: schedule, show: show) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;returns the schedule with associated shows and users&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="24">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      get &quot;/api/v1/users/#{user.id}/schedules/#{schedule.id}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(response).to have_http_status(:ok)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="28">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      json_response = JSON.parse(response.body, symbolize_names: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="30">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(json_response[:schedule][:id]).to eq(schedule.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="31">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(json_response[:schedule][:title]).to eq(schedule.title)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="32">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(json_response[:schedule][:date]).to eq(schedule.date.to_s)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="34">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(json_response[:shows].length).to eq(1)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="35">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(json_response[:shows].first[:artist]).to eq(show.artist)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="37">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(json_response[:user][:id]).to eq(user.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="38">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(json_response[:user][:first_name]).to eq(user.first_name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
             
 
             
 
             <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
