@@ -43,6 +43,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "shoulda-matchers"
   gem "factory_bot_rails"
+  gem 'faker'
 end
 
 group :test do
@@ -51,5 +52,6 @@ group :test do
   gem "webmock"
   gem "fuubar"
   gem "simplecov", require: false
+
 end
 
