@@ -451,3 +451,224 @@ Processing by Api::V1::SchedulesController#show as */*
 Completed 200 OK in 172ms (Views: 8.1ms | ActiveRecord: 53.7ms | Allocations: 28580)
 
 
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 13:23:36 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"8", "id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (0.6ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (1.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:11:in `show'
+Completed 200 OK in 77ms (Views: 3.5ms | ActiveRecord: 44.5ms | Allocations: 34660)
+
+
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 13:23:38 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"8", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (0.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:11:in `show'
+Completed 200 OK in 22ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 2450)
+
+
+Started GET "/api/v1/schedules" for ::1 at 2025-01-21 13:23:53 -0700
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (17.3ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:4:in `index'
+Completed 200 OK in 44ms (Views: 15.1ms | ActiveRecord: 17.3ms | Allocations: 838)
+
+
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 13:24:16 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"8", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (0.5ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:11:in `show'
+Completed 200 OK in 71ms (Views: 2.5ms | ActiveRecord: 2.1ms | Allocations: 2440)
+
+
+Started DELETE "/api/v1/schedules/1/schedule_shows/2" for ::1 at 2025-01-21 15:01:49 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ScheduleShowsController#destroy as */*
+  Parameters: {"schedule_id"=>"1", "id"=>"2"}
+  [1m[36mScheduleShow Load (1.7ms)[0m  [1m[34mSELECT "schedule_shows".* FROM "schedule_shows" WHERE "schedule_shows"."schedule_id" = $1 AND "schedule_shows"."show_id" = $2 LIMIT $3[0m  [["schedule_id", 1], ["show_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedule_shows_controller.rb:3:in `destroy'
+Completed 404 Not Found in 49ms (Views: 0.1ms | ActiveRecord: 21.1ms | Allocations: 13479)
+
+
+Started DELETE "/api/v1/schedules/1/schedule_shows/3" for ::1 at 2025-01-21 15:01:55 -0700
+Processing by Api::V1::ScheduleShowsController#destroy as */*
+  Parameters: {"schedule_id"=>"1", "id"=>"3"}
+  [1m[36mScheduleShow Load (0.3ms)[0m  [1m[34mSELECT "schedule_shows".* FROM "schedule_shows" WHERE "schedule_shows"."schedule_id" = $1 AND "schedule_shows"."show_id" = $2 LIMIT $3[0m  [["schedule_id", 1], ["show_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedule_shows_controller.rb:3:in `destroy'
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 507)
+
+
+Started GET "/api/v1/schedules" for ::1 at 2025-01-21 15:02:31 -0700
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (16.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:4:in `index'
+Completed 200 OK in 50ms (Views: 11.9ms | ActiveRecord: 24.7ms | Allocations: 7453)
+
+
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 15:02:54 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"8", "id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (0.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (2.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:11:in `show'
+Completed 200 OK in 91ms (Views: 5.6ms | ActiveRecord: 47.0ms | Allocations: 15299)
+
+
+Started GET "/api/v1/schedules/1/schedule_shows/9" for ::1 at 2025-01-21 15:03:38 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/schedules/1/schedule_shows/9"):
+  
+Started GET "/api/v1/schedules/1/schedule_shows/9/" for ::1 at 2025-01-21 15:03:58 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/schedules/1/schedule_shows/9"):
+  
+Started DELETE "/api/v1/schedules/1/schedule_shows/9/" for ::1 at 2025-01-21 15:04:24 -0700
+Processing by Api::V1::ScheduleShowsController#destroy as */*
+  Parameters: {"schedule_id"=>"1", "id"=>"9"}
+  [1m[36mScheduleShow Load (1.6ms)[0m  [1m[34mSELECT "schedule_shows".* FROM "schedule_shows" WHERE "schedule_shows"."schedule_id" = $1 AND "schedule_shows"."show_id" = $2 LIMIT $3[0m  [["schedule_id", 1], ["show_id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedule_shows_controller.rb:3:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/schedule_shows_controller.rb:6:in `destroy'
+  [1m[36mScheduleShow Destroy (2.8ms)[0m  [1m[31mDELETE FROM "schedule_shows" WHERE "schedule_shows"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/schedule_shows_controller.rb:6:in `destroy'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/schedule_shows_controller.rb:6:in `destroy'
+Completed 204 No Content in 45ms (ActiveRecord: 11.1ms | Allocations: 4801)
+
+
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 15:04:43 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"8", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (12.7ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:11:in `show'
+Completed 200 OK in 67ms (Views: 3.7ms | ActiveRecord: 14.0ms | Allocations: 2345)
+
+
+Started GET "/api/v1/schedules" for ::1 at 2025-01-21 16:57:10 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (2.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:4:in `index'
+Completed 200 OK in 58ms (Views: 12.1ms | ActiveRecord: 20.3ms | Allocations: 18337)
+
+
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 16:57:52 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"8", "id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (13.0ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (2.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:11:in `show'
+Completed 200 OK in 225ms (Views: 6.7ms | ActiveRecord: 182.8ms | Allocations: 18636)
+
+
+Started DELETE "/api/v1/users/8/schedules/1/shows/11" for ::1 at 2025-01-21 17:40:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/v1/users/8/schedules/1/shows/11"):
+  
+Started DELETE "/api/v1/users/8/schedules/1/shows/11" for ::1 at 2025-01-21 17:42:57 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SchedulesController#destroy as */*
+  Parameters: {"user_id"=>"8", "schedule_id"=>"1", "show_id"=>"11"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:23:in `destroy'
+  [1m[36mSchedule Load (0.7ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:24:in `destroy'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:25:in `destroy'
+  [1m[36mScheduleShow Load (1.0ms)[0m  [1m[34mSELECT "schedule_shows".* FROM "schedule_shows" WHERE "schedule_shows"."schedule_id" = $1 AND "schedule_shows"."show_id" = $2 LIMIT $3[0m  [["schedule_id", 1], ["show_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:27:in `destroy'
+Destroying ScheduleShow: 3
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:31:in `destroy'
+  [1m[36mScheduleShow Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schedule_shows" WHERE "schedule_shows"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:31:in `destroy'
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:34:in `destroy'
+Completed 200 OK in 69ms (Views: 0.1ms | ActiveRecord: 27.6ms | Allocations: 38352)
+
+
+Started DELETE "/api/v1/schedules" for ::1 at 2025-01-21 19:39:52 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/v1/schedules"):
+  
+Started GET "/api/v1/schedules" for ::1 at 2025-01-21 19:39:58 -0700
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (4.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:4:in `index'
+Completed 200 OK in 112ms (Views: 10.8ms | ActiveRecord: 75.1ms | Allocations: 18425)
+
+
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 19:40:33 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"8", "id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (21.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (2.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:11:in `show'
+Completed 200 OK in 250ms (Views: 9.1ms | ActiveRecord: 187.1ms | Allocations: 18795)
+
+
+Started DELETE "/api/v1/users/8/schedules/1/shows/10" for ::1 at 2025-01-21 19:41:08 -0700
+Processing by Api::V1::SchedulesController#destroy as */*
+  Parameters: {"user_id"=>"8", "schedule_id"=>"1", "show_id"=>"10"}
+  [1m[36mUser Load (17.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:23:in `destroy'
+  [1m[36mSchedule Load (0.4ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:24:in `destroy'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:30:in `destroy'
+  [1m[36mScheduleShow Load (0.2ms)[0m  [1m[34mSELECT "schedule_shows".* FROM "schedule_shows" WHERE "schedule_shows"."schedule_id" = $1 AND "schedule_shows"."show_id" = $2 LIMIT $3[0m  [["schedule_id", 1], ["show_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:36:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:39:in `destroy'
+  [1m[36mScheduleShow Destroy (8.2ms)[0m  [1m[31mDELETE FROM "schedule_shows" WHERE "schedule_shows"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:39:in `destroy'
+  [1m[36mSchedule Load (0.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:40:in `destroy'
+Completed 200 OK in 149ms (Views: 0.9ms | ActiveRecord: 55.3ms | Allocations: 9241)
+
+
+Started GET "/api/v1/users/8/schedules/1" for ::1 at 2025-01-21 19:41:18 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"8", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (0.5ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:11:in `show'
+Completed 200 OK in 12ms (Views: 3.9ms | ActiveRecord: 1.5ms | Allocations: 2171)
+
+

@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :schedule do
     title { "Sample Schedule" }
-    date { 1.week.from_now.to_date }
+    date { Date.today }
     user
   end
 end
