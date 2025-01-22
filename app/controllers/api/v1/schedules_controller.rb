@@ -1,22 +1,14 @@
 class Api::V1::SchedulesController < ApplicationController
   def index
     schedules = Schedule.all
-    render json: schedules, status: :ok
+    render json: ScheduleSerializer.format_schedules(schedules), status: :ok
   end
 
   def show
     user = User.find(params[:user_id])
     schedule = user.schedules.find(params[:id])
 
-    render json: {
-      schedule: schedule,
-      shows: schedule.shows,
-      user: {
-        id: user.id,
-        first_name: user.first_name,
-        last_name: user.last_name
-      }
-    }, status: :ok
+    render json: ScheduleSerializer.format_schedule_with_user_shows(schedule,user), status: :ok
   end
 
   def destroy
