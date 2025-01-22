@@ -21,22 +21,26 @@ class Api::V1::SchedulesController < ApplicationController
 
   def destroy
     user = User.find(params[:user_id])
-    schedule = user.schedules.find(params[:schedule_id])
-    show = Show.find(params[:show_id])
-  
+    schedule = user.schedules.find_by(id: params[:schedule_id])
+    if schedule.nil?
+      render json: ErrorSerializer.format_errors('Schedule not found'), status: :not_found
+      return
+    end
+
+    show = Show.find_by(id: params[:show_id])
+    if show.nil?
+      render json:ErrorSerializer.format_errors('Show not found'), status: :not_found
+      return
+    end
+
     schedule_show = schedule.schedule_shows.find_by(show_id: show.id)
-  
+
     if schedule_show
-      Rails.logger.info "Destroying ScheduleShow: #{schedule_show.id}"
       schedule_show.destroy
-  
-      # Ensure the show is removed from the schedule's shows association
       schedule.reload
-  
-      render json: { message: "Show removed from schedule" }, status: :ok
+      render json: ErrorSerializer.format_errors("Show removed from schedule"), status: :ok
     else
-      Rails.logger.error "ScheduleShow not found for schedule_id: #{schedule.id}, show_id: #{show.id}"
-      render json: { error: "Show not found in schedule" }, status: :not_found
+      render json: ErrorSerializer.format_errors("Show not found in schedule"), status: :not_found
     end
   end
 end

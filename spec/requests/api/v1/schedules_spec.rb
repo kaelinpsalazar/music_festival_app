@@ -13,7 +13,15 @@ RSpec.describe "Api::V1::Schedules", type: :request do
       expect(json.first[:title]).to eq(schedules.first.title)
       expect(json.first[:date]).to eq(schedules.first.date.to_s)
     end
+    it 'returns an empty array when no scedules exist' do
+      Schedule.delete_all
+      get "/api/v1/schedules"
+      expect(response).to be_successful
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json).to be_empty
+    end
   end
+
   describe "GET"  do
     let!(:user) { create(:user) }
     let!(:schedule) { create(:schedule, user: user) }
@@ -38,6 +46,11 @@ RSpec.describe "Api::V1::Schedules", type: :request do
       expect(json_response[:user][:first_name]).to eq(user.first_name)
     end
 
+    it 'returns a 404 when user does not exist' do
+      get "/api/v1/users/999/schedules/#{schedule.id}"
+      expect(response).to have_http_status(:not_found)
+    end
+
   end
 
   describe 'DELETE ' do
@@ -57,11 +70,25 @@ RSpec.describe "Api::V1::Schedules", type: :request do
         expect(schedule.shows).not_to include(show)
   
         expect(response).to have_http_status(:ok)
-        expect(JSON.parse(response.body)['message']).to eq('Show removed from schedule')
+        expect(JSON.parse(response.body)['error']).to eq('Show removed from schedule')
   
         expect(ScheduleShow.find_by(schedule_id: schedule.id, show_id: show.id)).to be_nil
       end
     end
+
+    it "returns a 404 when the schedule doesn't exist" do
+      delete "/api/v1/users/#{user.id}/schedules/999/shows/#{show.id}"
+      expect(response).to have_http_status(:not_found)
+      expect(JSON.parse(response.body)['error']).to eq('Schedule not found')
+    end
+
+    it "returns a 404 when the show doesn't exist in the schedule" do
+      delete "/api/v1/users/#{user.id}/schedules/#{schedule.id}/shows/999"
+      expect(response).to have_http_status(:not_found)
+      expect(JSON.parse(response.body)['error']).to eq('Show not found')
+    end
+
+    
   end
 end
 
