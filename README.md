@@ -19,11 +19,12 @@ This application is has a functionality focus for admins viewing the details of 
 ```rails server```
 
 
-### Routes
+### Endpoints
 
 GET /api/v1/schedules
- - Fetches a list of all schedules.
- - Maps to: api/v1/schedules#index
+ - Description: Fetches a list of all schedules.
+ - Request: 
+  Maps to: api/v1/schedules#index
 
 GET /api/v1/users/id/schedules/:id
  - Fetches user-specific schedules details.
@@ -34,8 +35,8 @@ DELETE /api/v1/shows/:id
  - Maps to: api/v1/shows#destroy 
 
  ### Links
-- ![Github FE Repo](https://github.com/kaelinpsalazar/final-music-fe)
-- ![Github BE Repo](https://github.com/kaelinpsalazar/music_festival_app)
+- [Github FE Repo](https://github.com/kaelinpsalazar/final-music-fe)
+- [Github BE Repo](https://github.com/kaelinpsalazar/music_festival_app)
 
  ### Team Member
 #### Kaelin Salazar
