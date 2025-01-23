@@ -31,8 +31,7 @@ class Api::V1::SchedulesController < ApplicationController
       schedule_show.destroy
       schedule.reload
       render json: ErrorSerializer.format_errors("Show removed from schedule"), status: :ok
-    else
-      render json: ErrorSerializer.format_errors("Show not found in schedule"), status: :not_found
+
     end
   end
 end

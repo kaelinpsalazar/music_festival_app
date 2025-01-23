@@ -47,9 +47,27 @@ RSpec.describe "Api::V1::Schedules", type: :request do
     end
 
     it 'returns a 404 when user does not exist' do
+      get "/api/v1/users/#{user.id}/schedules/9999"
+      expect(response).to have_http_status(:not_found)
+    end
+
+    it 'returns a 404 when user does not exist' do
       get "/api/v1/users/999/schedules/#{schedule.id}"
       expect(response).to have_http_status(:not_found)
     end
+
+    it "returns a 404 for an invalid schedule ID format" do
+      delete "/api/v1/users/#{user.id}/schedules/abc/shows/#{show.id}"
+    
+      expect(response).to have_http_status(:not_found)
+    end
+    
+    it "returns a 404 for an invalid show ID format" do
+      delete "/api/v1/users/#{user.id}/schedules/#{schedule.id}/shows/xyz"
+    
+      expect(response).to have_http_status(:not_found)
+    end
+
 
   end
 
@@ -87,6 +105,8 @@ RSpec.describe "Api::V1::Schedules", type: :request do
       expect(response).to have_http_status(:not_found)
       expect(JSON.parse(response.body)['error']).to eq('Show not found')
     end
+
+    
 
     
   end

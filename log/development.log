@@ -15762,3 +15762,116 @@ Processing by Api::V1::SchedulesController#show as */*
 Completed 200 OK in 422ms (Views: 3.9ms | ActiveRecord: 300.4ms | Allocations: 2173)
 
 
+Started GET "/api/v1/schedules" for ::1 at 2025-01-23 08:51:00 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (26.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (19.4ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/serializers/schedule_serializer.rb:3:in `map'
+Completed 200 OK in 227ms (Views: 1.1ms | ActiveRecord: 190.4ms | Allocations: 18831)
+
+
+Started GET "/api/v1/schedules" for ::1 at 2025-01-23 08:51:01 -0700
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (0.3ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/serializers/schedule_serializer.rb:3:in `map'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 670)
+
+
+Started GET "/api/v1/users/3/schedules/3" for ::1 at 2025-01-23 08:51:02 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"3", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (0.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (3.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 3]]
+  ↳ app/serializers/schedule_serializer.rb:23:in `map'
+Completed 200 OK in 46ms (Views: 0.2ms | ActiveRecord: 11.3ms | Allocations: 18009)
+
+
+Started GET "/api/v1/users/3/schedules/3" for ::1 at 2025-01-23 08:51:02 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"3", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (0.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 3]]
+  ↳ app/serializers/schedule_serializer.rb:23:in `map'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 2242)
+
+
+Started DELETE "/api/v1/users/3/schedules/3/shows/6" for ::1 at 2025-01-23 08:51:04 -0700
+Processing by Api::V1::SchedulesController#destroy as */*
+  Parameters: {"user_id"=>"3", "schedule_id"=>"3", "show_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:15:in `destroy'
+  [1m[36mSchedule Load (0.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:16:in `destroy'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:22:in `destroy'
+  [1m[36mScheduleShow Load (0.2ms)[0m  [1m[34mSELECT "schedule_shows".* FROM "schedule_shows" WHERE "schedule_shows"."schedule_id" = $1 AND "schedule_shows"."show_id" = $2 LIMIT $3[0m  [["schedule_id", 3], ["show_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:31:in `destroy'
+  [1m[36mScheduleShow Destroy (1.6ms)[0m  [1m[31mDELETE FROM "schedule_shows" WHERE "schedule_shows"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/schedules_controller.rb:31:in `destroy'
+  [1m[36mSchedule Load (0.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:32:in `destroy'
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 5.0ms | Allocations: 7650)
+
+
+Started GET "/api/v1/schedules" for ::1 at 2025-01-23 08:52:39 -0700
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (1.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/serializers/schedule_serializer.rb:3:in `map'
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 1.2ms | Allocations: 667)
+
+
+Started GET "/api/v1/schedules" for ::1 at 2025-01-23 08:52:39 -0700
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (0.5ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/serializers/schedule_serializer.rb:3:in `map'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 667)
+
+
+Started GET "/api/v1/users/2/schedules/2" for ::1 at 2025-01-23 08:53:20 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (0.5ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (1.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 2]]
+  ↳ app/serializers/schedule_serializer.rb:23:in `map'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 4.2ms | Allocations: 2251)
+
+
+Started GET "/api/v1/users/2/schedules/2" for ::1 at 2025-01-23 08:53:20 -0700
+Processing by Api::V1::SchedulesController#show as */*
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:8:in `show'
+  [1m[36mSchedule Load (0.2ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules" WHERE "schedules"."user_id" = $1 AND "schedules"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/schedules_controller.rb:9:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "schedule_shows" ON "shows"."id" = "schedule_shows"."show_id" WHERE "schedule_shows"."schedule_id" = $1[0m  [["schedule_id", 2]]
+  ↳ app/serializers/schedule_serializer.rb:23:in `map'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 2236)
+
+
+Started GET "/api/v1/schedules" for ::1 at 2025-01-23 08:54:54 -0700
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (57.1ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/serializers/schedule_serializer.rb:3:in `map'
+Completed 200 OK in 62ms (Views: 0.6ms | ActiveRecord: 57.1ms | Allocations: 670)
+
+
+Started GET "/api/v1/schedules" for ::1 at 2025-01-23 08:54:54 -0700
+Processing by Api::V1::SchedulesController#index as */*
+  [1m[36mSchedule Load (0.5ms)[0m  [1m[34mSELECT "schedules".* FROM "schedules"[0m
+  ↳ app/serializers/schedule_serializer.rb:3:in `map'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 667)
+
+

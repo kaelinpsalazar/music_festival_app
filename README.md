@@ -3,6 +3,9 @@
 ## Description
 This application is has a functionality focus for admins viewing the details of schedules submitted, the ateendee who created that schedule, and the shows in which they are interested in. Aditionally it allows the admin to edit the users information as needed.
 
+## Flow
+![flow](./public/images/screen.png)
+
 
 ## Installation
 1. Clone the Repository: [App](https://github.com/wally-yawn/mod_3_final_be).
