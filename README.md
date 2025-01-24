@@ -26,13 +26,59 @@ GET /api/v1/schedules
  - Request: 
   Maps to: api/v1/schedules#index
 
+  #### Response
+  ```
+  {
+        id: schedule.id,
+        title: schedule.title,
+        date: schedule.date,
+        created_at: schedule.created_at,
+        updated_at: schedule.updated_at
+      }
+  ```
+
 GET /api/v1/users/id/schedules/:id
  - Fetches user-specific schedules details.
- - Maps to: api/v1/user_itineraries#show
+ - Request: 
+ - Maps to: api/v1/schedules#index
+
+  #### Response
+ ```{
+      schedule: {
+        id: schedule.id,
+        title: schedule.title,
+        date: schedule.date,
+        created_at: schedule.created_at,
+        updated_at: schedule.updated_at
+      },
+      shows: schedule.shows.map do |show|
+        {
+          id: show.id,
+          artist: show.artist,
+          date: show.date,
+          time: show.time,
+          image_url: show.image_url,           
+          artist_image_url: show.artist_image_url 
+        }
+      end,
+      user: {
+        id: user.id,
+        first_name: user.first_name,
+        last_name: user.last_name
+      }
+    }
+```
+
 
 DELETE /api/v1/shows/:id
  - Deletes a show by its ID.
  - Maps to: api/v1/shows#destroy 
+
+  #### Response
+
+ ```
+ {("Show removed from schedule")}
+ ```
 
  ### Links
 - [Github FE Repo](https://github.com/kaelinpsalazar/final-music-fe)
